@@ -1,0 +1,9 @@
+.feed-page {
+    padding: 20px;
+}
+
+.title{
+    overflow: hidden;
+    white-space: nowrap; /*TODO - need to find out what this property does*/
+    text-overflow: ellipsis;
+}
