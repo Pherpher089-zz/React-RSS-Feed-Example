@@ -91,6 +91,7 @@ function HomePage({feedstore}) {
                                 </Form.Control.Feedback>
                             </Form.Group>
                         </Form.Row>
+                        <Button type='submit'>Add</Button>
                     </Form>
                 )}
             </Formik>
