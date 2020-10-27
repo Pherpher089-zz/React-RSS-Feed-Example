@@ -23,7 +23,7 @@ const schema = yup.object({
         ),
 });
 
-function HomePage({feedstore}) {
+function HomePage({ feedstore }) {
     const [initialized, setInitialized ] = useState(false);
     const [redirectToFeed, setRedirectToFeed] = useState(false);
 
@@ -96,7 +96,22 @@ function HomePage({feedstore}) {
                 )}
             </Formik>
             <br />
+            {feedstore.map((f, i) => {
+                return(
+                    <Card key={i}>
+                        <Card.Title className="card-title">{f.name}</Card.Title>
+                        <Card.Body>
+                            <p>{f.url}</p>
+                            <Button
+                                variant="primary"
+                                onClick={setSelectedFeed.bind(this,f.url)}>Open</Button>{" "}
+                                <Button variant="primary" onClick={deleteFeed.bind(this, i)}>Delete</Button>
+                        </Card.Body>
+                    </Card>
+                )
+            })}
         </div>
-    )
-}
+        );
+    }
+    export default observer(HomePage);
 
